@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #2D6A4F;
+  --color-primary-hover: #40916C;
+  --color-primary-light: #52B788;
+  --color-primary-dark: #1B4332;
+  --color-accent: #F2A63D;
+  --color-bg: #f0f4f1;
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-bg text-[#212529] font-sans antialiased overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Swiper Styles for Coverflow */
+.swiper-wrapper {
+  padding-bottom: 40px !important;
+}
+.swiper-slide {
+  transition: opacity 0.3s ease;
+}
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.6;
 }
