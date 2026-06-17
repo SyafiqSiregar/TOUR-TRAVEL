@@ -40,7 +40,7 @@ export default function Navbar() {
         className="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-7xl z-50 rounded-full border border-gray-200/50 bg-white/90 backdrop-blur-md shadow-sm"
       >
         <div className="flex items-center justify-between px-6 lg:px-8 h-16">
-          <div className="font-heading font-bold text-xl text-primary">NusaJelajah</div>
+          <div className="font-heading font-bold text-xl text-primary">M One Travelindo</div>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-1">

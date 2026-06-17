@@ -14,7 +14,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2 pr-8">
-            <h3 className="font-heading font-bold text-2xl mb-4">NusaJelajah</h3>
+            <h3 className="font-heading font-bold text-2xl mb-4">M One Travelindo</h3>
             <p className="text-white/70 leading-relaxed max-w-sm">
               Membawa Anda lebih dekat dengan keindahan Nusantara melalui layanan perjalanan yang aman, nyaman, dan terpercaya.
             </p>
@@ -49,7 +49,7 @@ export default function Footer() {
 
         <div className="text-center pt-8 border-t border-white/10">
           <p className="text-sm text-white/40">
-            &copy; {new Date().getFullYear()} NusaJelajah. All rights reserved.
+            &copy; {new Date().getFullYear()} M One Travelindo. All rights reserved.
           </p>
         </div>
       </div>

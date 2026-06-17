@@ -41,7 +41,7 @@ export default function Features() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6"
           >
-            Kenapa Memilih NusaJelajah?
+            Kenapa Memilih M One Travelindo?
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

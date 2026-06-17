@@ -18,7 +18,7 @@ const FAQS = [
     a: "Paket kami bersifat All-Inclusive untuk tiket masuk wisata utama. Biaya tambahan hanya berlaku untuk pengeluaran pribadi, tip guide (opsional), dan wahana di luar itinerary."
   },
   {
-    q: "Apakah aman booking online di NusaJelajah?",
+    q: "Apakah aman booking online di M One Travelindo?",
     a: "Sangat aman! Sistem pembayaran kami terenkripsi penuh dan kami bekerja sama dengan payment gateway resmi yang diawasi oleh Bank Indonesia."
   },
   {

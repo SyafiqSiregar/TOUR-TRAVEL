@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "NusaJelajah | Premium Tour & Travel",
+  title: "M One Travelindo | Premium Tour & Travel",
   description: "Platform tour & travel terbaik untuk menjelajahi keindahan Indonesia.",
 };
 

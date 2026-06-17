@@ -8,7 +8,7 @@ const TESTIMONIALS = [
     id: 1,
     name: "Keluarga Budi",
     title: "Liburan Keluarga Tak Terlupakan",
-    quote: '"Perjalanan ke Bali bersama NusaJelajah benar-benar luar biasa! Pemandu sangat profesional dan harganya sesuai ekspektasi."',
+    quote: '"Perjalanan ke Bali bersama M One Travelindo benar-benar luar biasa! Pemandu sangat profesional dan harganya sesuai ekspektasi."',
     img: "/assets/hero-bali.png"
   },
   {

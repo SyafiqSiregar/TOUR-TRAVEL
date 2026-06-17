@@ -48,7 +48,7 @@ export default function Mockup() {
                 <div className="w-3 h-3 rounded-full bg-green-500" />
               </div>
               <div className="mx-auto bg-white/10 px-4 py-1 rounded text-xs text-white/50 w-64 text-center truncate">
-                dashboard.nusajelajah.com
+                dashboard.monetravelindo.com
               </div>
             </div>
             

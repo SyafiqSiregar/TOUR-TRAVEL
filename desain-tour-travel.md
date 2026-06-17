@@ -1,9 +1,9 @@
-# ✈️ NusaJelajah — Rancangan Desain Website Tour & Travel
+# ✈️ M One Travelindo — Rancangan Desain Website Tour & Travel
 
-> **Proyek:** NusaJelajah — Platform Tour & Travel Indonesia  
+> **Proyek:** M One Travelindo — Platform Tour & Travel Indonesia  
 > **Versi Desain:** 1.0  
 > **Tanggal:** Juni 2026  
-> **Tim:** NusaJelajah Design Team
+> **Tim:** M One Travelindo Design Team
 
 ---
 
@@ -27,7 +27,7 @@
 ## 1. Ringkasan Proyek
 
 ### Deskripsi Singkat
-**NusaJelajah** adalah platform tour & travel berbasis digital yang menghubungkan wisatawan dengan paket perjalanan terbaik ke destinasi-destinasi unggulan di seluruh Indonesia dan mancanegara. Website ini dirancang dengan antarmuka yang bersih, modern, dan intuitif agar proses pencarian dan pemesanan paket wisata terasa mudah dan menyenangkan.
+**M One Travelindo** adalah platform tour & travel berbasis digital yang menghubungkan wisatawan dengan paket perjalanan terbaik ke destinasi-destinasi unggulan di seluruh Indonesia dan mancanegara. Website ini dirancang dengan antarmuka yang bersih, modern, dan intuitif agar proses pencarian dan pemesanan paket wisata terasa mudah dan menyenangkan.
 
 ### Tujuan Desain
 - Memudahkan pengguna menemukan paket wisata sesuai keinginan dan anggaran
@@ -48,7 +48,7 @@
 ## 2. Identitas Brand
 
 ### Nama & Tagline
-- **Nama:** NusaJelajah
+- **Nama:** M One Travelindo
 - **Tagline:** *"Jelajahi Dunia, Mulai dari Sini"*
 - **Sub-tagline:** *"Perjalanan Tak Terlupakan, Harga yang Terjangkau"*
 
@@ -270,7 +270,7 @@ Label       →  font-size: 12px / line-height: 1.4  / weight: 600
 │  └─────────┘  Wisatawan dari Bandung         │  ← Asal / Caption
 │                                              │
 │  "Perjalanan ke Raja Ampat bersama          │  ← Quote / italic
-│   NusaJelajah benar-benar luar biasa!        │     Body M
+│   M One Travelindo benar-benar luar biasa!        │     Body M
 │   Pemandu sangat profesional dan             │
 │   harganya sesuai ekspektasi."               │
 │                                              │
@@ -322,7 +322,7 @@ Label       →  font-size: 12px / line-height: 1.4  / weight: 600
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│  ✈️ NusaJelajah   Beranda  Destinasi  Paket  Tentang  Blog  FAQ   Masuk  Pesan│
+│  ✈️ M One Travelindo   Beranda  Destinasi  Paket  Tentang  Blog  FAQ   Masuk  Pesan│
 └──────────────────────────────────────────────────────────────────────────────┘
   bg: rgba(255,255,255,0.95)  backdrop-filter: blur(10px)
   border-bottom: 1px solid #DEE2E6
@@ -379,7 +379,7 @@ Label       →  font-size: 12px / line-height: 1.4  / weight: 600
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │                                                                  │
-│  ✈️ NusaJelajah                  Destinasi                      │
+│  ✈️ M One Travelindo                  Destinasi                      │
 │  Jelajahi Dunia, Mulai dari      Bali  Lombok  Raja Ampat       │
 │  Sini. Platform tour & travel    Labuan Bajo  Yogyakarta        │
 │  terpercaya untuk perjalanan     Paket Wisata                   │
@@ -388,7 +388,7 @@ Label       →  font-size: 12px / line-height: 1.4  / weight: 600
 │  Kepercayaan · Petualangan · Kenyamanan · Kenangan · Alam       │
 │                                                                  │
 │  ─────────────────────────────────────────────────────────────  │
-│  © 2026 NusaJelajah. Jelajahi Dunia, Mulai dari Sini.           │
+│  © 2026 M One Travelindo. Jelajahi Dunia, Mulai dari Sini.           │
 │  Semua Hak Dilindungi.                                          │
 └──────────────────────────────────────────────────────────────────┘
   bg: #1B4332 (hijau gelap)
@@ -402,13 +402,13 @@ Label       →  font-size: 12px / line-height: 1.4  / weight: 600
 ## 6. Struktur Halaman (Sitemap)
 
 ```
-nusajelajah.com/
+monetravelindo.com/
 │
 ├── / (Home / Landing Page)
 │   ├── #beranda       → Hero Section + Search Bar
 │   ├── #destinasi     → Destinasi Terpopuler
 │   ├── #paket         → Paket Wisata Unggulan
-│   ├── #tentang       → Tentang NusaJelajah
+│   ├── #tentang       → Tentang M One Travelindo
 │   ├── #cara-booking  → 4 Langkah Mudah Pesan
 │   ├── #testimoni     → Ulasan Wisatawan
 │   └── #faq           → FAQ
@@ -443,7 +443,7 @@ nusajelajah.com/
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│  ✈️ NusaJelajah  [Beranda][Destinasi][Paket][Tentang][Blog][FAQ]  [Masuk][Pesan] │
+│  ✈️ M One Travelindo  [Beranda][Destinasi][Paket][Tentang][Blog][FAQ]  [Masuk][Pesan] │
 └────────────────────────────────────────────────────────────────────────┘
   Layout: Flexbox space-between
   Max-width container: 1280px
@@ -565,14 +565,14 @@ Grid: 3 kolom (desktop) / 2 kolom (tablet) / 1 kolom (mobile)
 
 ---
 
-### 7.6 SEKSI 6 — Tentang NusaJelajah (`#tentang`)
+### 7.6 SEKSI 6 — Tentang M One Travelindo (`#tentang`)
 
 ```
 ┌──────────────────────────────────────────────────────────┐
 │                                                          │
-│   Mengapa Pilih NusaJelajah?                             │
+│   Mengapa Pilih M One Travelindo?                             │
 │                                                          │
-│   NusaJelajah hadir sebagai platform tour & travel       │
+│   M One Travelindo hadir sebagai platform tour & travel       │
 │   digital yang menghubungkan wisatawan dengan            │
 │   pengalaman perjalanan terbaik. Didukung pemandu        │
 │   bersertifikat, harga transparan, dan layanan           │
@@ -696,7 +696,7 @@ bg: #F8F9FA
 │  │ Apakah ada biaya tambahan saat di lokasi?      [+] │  │
 │  └────────────────────────────────────────────────────┘  │
 │  ┌────────────────────────────────────────────────────┐  │
-│  │ Apakah aman booking online di NusaJelajah?     [+] │  │
+│  │ Apakah aman booking online di M One Travelindo?     [+] │  │
 │  └────────────────────────────────────────────────────┘  │
 │  ┌────────────────────────────────────────────────────┐  │
 │  │ Apakah tersedia paket untuk grup besar?        [+] │  │
@@ -723,7 +723,7 @@ Accordion dengan smooth animation
 │                                                              │
 │  ──────────────────────────────────────────────────────────  │
 │                                                              │
-│  ✈️ NusaJelajah         Destinasi         Paket             │
+│  ✈️ M One Travelindo         Destinasi         Paket             │
 │  Jelajahi Dunia,        Bali              Honeymoon         │
 │  Mulai dari Sini.       Lombok            Keluarga          │
 │                         Raja Ampat        Adventure         │
@@ -735,7 +735,7 @@ Accordion dengan smooth animation
 │                         Karir             Syarat & Ketentuan│
 │                                                              │
 │  ──────────────────────────────────────────────────────────  │
-│  © 2026 NusaJelajah. Jelajahi Dunia, Mulai dari Sini.       │
+│  © 2026 M One Travelindo. Jelajahi Dunia, Mulai dari Sini.       │
 │  Semua Hak Dilindungi. · 🔒 SSL Secured · 💳 Payment Aman  │
 └──────────────────────────────────────────────────────────────┘
 
@@ -932,7 +932,7 @@ Map Integration  → Marker bounce saat destinasi di-hover di peta
 ## 11. Panduan Aksesibilitas
 
 ### Standar Target
-NusaJelajah menargetkan kepatuhan **WCAG 2.1 Level AA**.
+M One Travelindo menargetkan kepatuhan **WCAG 2.1 Level AA**.
 
 ### Kontras Warna
 
@@ -979,7 +979,7 @@ NusaJelajah menargetkan kepatuhan **WCAG 2.1 Level AA**.
 | `dest-labuan-bajo.jpg` | Card Destinasi | Foto Pulau Padar |
 | `mockup-dashboard.png` | Seksi Mockup | Screenshot dashboard booking |
 | `avatar-1.jpg` – `avatar-6.jpg` | Testimoni | Foto profil wisatawan |
-| `logo-nusajelajah.svg` | Navbar, Footer | Logo brand |
+| `logo-monetravelindo.svg` | Navbar, Footer | Logo brand |
 | `icon-payment-*.svg` | Halaman Bayar | Ikon metode pembayaran |
 
 ### Spesifikasi Gambar
@@ -1079,9 +1079,9 @@ Ikon yang dibutuhkan untuk Tour & Travel:
 
 ---
 
-## Perbandingan Template: Rebox vs NusaJelajah
+## Perbandingan Template: Rebox vs M One Travelindo
 
-| Elemen | Rebox (Donasi) | NusaJelajah (Tour & Travel) |
+| Elemen | Rebox (Donasi) | M One Travelindo (Tour & Travel) |
 |--------|---------------|----------------------------|
 | Palet Warna | ✅ Identik | ✅ Identik |
 | Tipografi | ✅ Identik | ✅ Identik |
@@ -1102,4 +1102,4 @@ Ikon yang dibutuhkan untuk Tour & Travel:
 
 ---
 
-**© 2026 NusaJelajah Design Documentation — Dibuat dengan ✈️💚**
+**© 2026 M One Travelindo Design Documentation — Dibuat dengan ✈️💚**
