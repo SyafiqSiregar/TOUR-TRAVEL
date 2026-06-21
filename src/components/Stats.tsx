@@ -45,8 +45,8 @@ function Counter({ from, to, suffix }: { from: number; to: number; suffix: strin
 
 export default function Stats() {
   return (
-    <section className="py-20 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 md:py-24 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {STATS.map((stat, i) => (
             <motion.div

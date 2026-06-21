@@ -3,14 +3,15 @@
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { label: "Beranda", href: "#hero" },
-  { label: "Destinasi", href: "#destinations" },
-  { label: "Tentang Kami", href: "#about" },
-  { label: "Layanan", href: "#steps" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Beranda", href: "/" },
+  { label: "Destinasi", href: "/#destinations" },
+  { label: "Tentang Kami", href: "/#about" },
+  { label: "Layanan", href: "/#services" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Navbar() {
@@ -39,7 +40,7 @@ export default function Navbar() {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-7xl z-50 rounded-full border border-gray-200/50 bg-white/90 backdrop-blur-md shadow-sm"
       >
-        <div className="flex items-center justify-between px-6 lg:px-8 h-16">
+        <div className="flex items-center justify-between px-4 md:px-6 lg:px-8 h-16">
           <div className="font-heading font-bold text-xl text-primary">M One Travelindo</div>
 
           {/* Desktop Links */}

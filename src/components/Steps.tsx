@@ -36,8 +36,8 @@ export default function Steps() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="steps" className="py-24 bg-[#f9faf9] relative">
-      <div className="max-w-3xl mx-auto px-6 lg:px-8">
+    <section id="steps" className="py-16 md:py-24 bg-[#f9faf9] relative">
+      <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Cara Kerja</h2>
           <h3 className="text-3xl md:text-4xl font-heading font-bold text-gray-900">

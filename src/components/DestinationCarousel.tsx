@@ -137,8 +137,8 @@ export default function DestinationCarousel() {
   };
 
   return (
-    <section id="destinations" className="py-24 bg-[#f9faf9] overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12 text-center">
+    <section id="destinations" className="py-16 md:py-24 bg-[#f9faf9] overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mb-12 text-center">
         <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Paket Pilihan</h2>
         <h3 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
           Destinasi Terpopuler Bulan Ini

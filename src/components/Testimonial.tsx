@@ -38,8 +38,8 @@ export default function Testimonial() {
   const [activeId, setActiveId] = useState(1);
 
   return (
-    <section className="py-24 bg-bg overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-bg overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Cerita Pengguna</h2>
           <h3 className="text-3xl md:text-4xl font-heading font-bold text-gray-900">

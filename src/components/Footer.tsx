@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-[#1B4332] text-white pt-24 pb-8 rounded-t-[40px] -mt-10 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         
         {/* Value Tags */}
         <div className="flex flex-wrap justify-center gap-3 mb-16 border-b border-white/10 pb-12">
@@ -23,10 +23,15 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-6 text-white/90">Layanan</h4>
             <ul className="space-y-4">
-              {["Paket Wisata", "Custom Trip", "Corporate Gathering", "Sewa Transportasi"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
-                    {link}
+              {[
+                { label: "Study Tour Sekolah", href: "/study-tour" },
+                { label: "Overland Jawa-Bali", href: "/overland" },
+                { label: "Mudik Mahasiswa", href: "/mudik-mahasiswa" },
+                { label: "Semua Destinasi", href: "/#destinations" }
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-white/60 hover:text-white transition-colors text-sm">
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -36,10 +41,15 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-6 text-white/90">Perusahaan</h4>
             <ul className="space-y-4">
-              {["Tentang Kami", "Karir", "Syarat & Ketentuan", "Kebijakan Privasi"].map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-white/60 hover:text-white transition-colors text-sm">
-                    {link}
+              {[
+                { label: "Tentang Kami", href: "/#about" },
+                { label: "FAQ", href: "/#faq" },
+                { label: "Syarat & Ketentuan", href: "#" },
+                { label: "Kebijakan Privasi", href: "#" }
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-white/60 hover:text-white transition-colors text-sm">
+                    {link.label}
                   </a>
                 </li>
               ))}
