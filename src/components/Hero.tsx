@@ -199,17 +199,17 @@ export default function Hero() {
                     onSelect={(date) => { setSelectedDate(date); setShowDate(false); }}
                     locale={id}
                     className="border-none"
-                    classNames={{
+                    classNames={({
                       day: "w-9 h-9 text-sm rounded-full hover:bg-gray-100 text-gray-900",
-                      day_selected: "bg-primary text-white hover:bg-primary-hover font-bold",
-                      day_today: "font-bold text-accent",
+                      selected: "bg-primary text-white hover:bg-primary-hover font-bold",
+                      today: "font-bold text-accent",
                       caption: "flex justify-center pt-1 relative items-center mb-4",
                       caption_label: "text-sm font-semibold font-heading text-gray-900",
                       nav: "flex items-center space-x-1 absolute right-0",
                       nav_button: "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 flex items-center justify-center rounded-full hover:bg-gray-100",
                       head_cell: "text-gray-500 font-medium text-[0.8rem] uppercase tracking-wider w-9 pb-2",
                       cell: "h-9 w-9 text-center p-0 mt-1",
-                    }}
+                    } as any)}
                   />
                 </motion.div>
               )}
