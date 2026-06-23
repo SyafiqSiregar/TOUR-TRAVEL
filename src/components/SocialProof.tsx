@@ -83,7 +83,7 @@ export default function SocialProof() {
             className="w-full"
           >
             {TIKTOK_VIDEOS.map((video) => (
-              <SwiperSlide key={video.id}>
+              <SwiperSlide key={video.id} className="!opacity-100">
                 <div className="relative aspect-[9/16] rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group bg-gray-200">
                   {/* Thumbnail */}
                   <div

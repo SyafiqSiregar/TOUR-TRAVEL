@@ -20,6 +20,18 @@ export default function Hero() {
   const [showDate, setShowDate] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  const [pax, setPax] = useState("");
+
+  const handleSearch = () => {
+    const loc = selectedLocation || "destinasi (belum ditentukan)";
+    const dateStr = selectedDate ? format(selectedDate, "dd MMM yyyy", { locale: id }) : "waktu (belum ditentukan)";
+    const paxStr = pax || "jumlah (belum ditentukan)";
+    
+    const message = `Halo Admin M One Travelindo, saya tertarik untuk merencanakan perjalanan rombongan dengan detail berikut:\n\n📍 *Tujuan*: ${loc}\n📅 *Tanggal*: ${dateStr}\n👥 *Jumlah Peserta*: ${paxStr}\n\nMohon informasi lebih lanjut mengenai ketersediaan paket dan harganya. Terima kasih!`;
+    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, "_blank");
+  };
 
   const locationRef = useRef<HTMLDivElement>(null);
   const dateRef = useRef<HTMLDivElement>(null);
@@ -223,11 +235,20 @@ export default function Hero() {
             <Users className="w-4 h-4 text-primary mr-3" />
             <div className="flex flex-col items-start w-full">
               <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Rombongan</span>
-              <input type="text" placeholder="Jumlah kursi bus?" className="bg-transparent border-none outline-none text-gray-900 text-sm font-semibold placeholder:text-gray-400 w-full" />
+              <input 
+                type="text" 
+                value={pax}
+                onChange={(e) => setPax(e.target.value)}
+                placeholder="Jumlah kursi bus?" 
+                className="bg-transparent border-none outline-none text-gray-900 text-sm font-semibold placeholder:text-gray-400 w-full" 
+              />
             </div>
           </div>
 
-          <button className="bg-primary hover:bg-primary-hover text-white rounded-2xl px-6 py-3 flex items-center justify-center text-sm font-bold transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95">
+          <button 
+            onClick={handleSearch}
+            className="bg-primary hover:bg-primary-hover text-white rounded-2xl px-6 py-3 flex items-center justify-center text-sm font-bold transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95 cursor-pointer"
+          >
             <Search className="w-4 h-4 mr-2" />
             Cari
           </button>
