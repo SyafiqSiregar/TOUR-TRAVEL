@@ -10,6 +10,7 @@ import Mockup from "@/components/Mockup";
 import FAQ from "@/components/FAQ";
 import SocialProof from "@/components/SocialProof";
 import Testimonial from "@/components/Testimonial";
+import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <Mockup />
       <FAQ />
       <SocialProof />
+      <Gallery />
       <Testimonial />
       <Footer />
     </main>

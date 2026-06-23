@@ -79,9 +79,9 @@ export default function Features() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-20 max-w-4xl mx-auto bg-gradient-to-r from-bg to-white border-l-4 border-primary p-8 rounded-r-3xl shadow-sm"
+          className="mt-12 md:mt-16 max-w-3xl mx-auto bg-gradient-to-r from-bg to-white border-l-4 border-primary py-5 px-6 md:px-8 rounded-r-2xl shadow-sm"
         >
-          <p className="text-xl md:text-2xl font-heading font-medium text-gray-800 italic leading-snug">
+          <p className="text-lg md:text-xl font-heading font-medium text-gray-800 italic leading-snug">
             "Kami percaya bahwa setiap perjalanan bukan sekadar mengunjungi tempat baru, melainkan tentang cerita yang Anda bawa pulang."
           </p>
         </motion.div>

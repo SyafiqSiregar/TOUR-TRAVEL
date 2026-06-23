@@ -135,7 +135,7 @@ export default function Hero() {
                       <button
                         key={loc}
                         onClick={() => { setSelectedLocation(loc); setShowLocation(false); }}
-                        className="px-3 py-2 text-sm text-left font-medium text-gray-700 rounded-xl hover:bg-primary/10 hover:text-primary transition-colors"
+                        className="px-3 py-2 text-sm text-left font-medium text-gray-700 rounded-xl hover:bg-primary/10 hover:text-primary transition-all duration-200 hover:translate-x-1"
                       >
                         {loc}
                       </button>
@@ -227,7 +227,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <button className="bg-primary hover:bg-primary-hover text-white rounded-2xl px-6 py-3 flex items-center justify-center text-sm font-bold transition-colors shadow-lg shadow-primary/25">
+          <button className="bg-primary hover:bg-primary-hover text-white rounded-2xl px-6 py-3 flex items-center justify-center text-sm font-bold transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95">
             <Search className="w-4 h-4 mr-2" />
             Cari
           </button>

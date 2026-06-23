@@ -16,7 +16,7 @@ export default function Mockup() {
               Kenyamanan Kelas Eksekutif, Panitia Bebas Pusing
             </h3>
             <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-xl">
-              Kami pastikan setiap rombongan Anda—baik rombongan besar sekolah maupun grup privat—mendapatkan pengalaman darat terbaik. Fokus nikmati perjalanan dan nilai edukasinya, biar kami yang urus sisanya.
+              Kami pastikan setiap rombongan Anda, baik rombongan besar sekolah maupun grup privat, mendapatkan pengalaman darat terbaik. Fokus nikmati perjalanan dan nilai edukasinya, biar kami yang urus sisanya.
             </p>
             
             <ul className="space-y-5 mb-10">
