@@ -58,12 +58,11 @@ export default function Navbar() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-3">
-            <button className="text-sm font-medium text-primary hover:bg-primary/5 px-5 py-2 rounded-full transition-colors">
-              Masuk
-            </button>
-            <button className="text-sm font-semibold text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/20 px-6 py-2 rounded-full transition-all hover:-translate-y-0.5">
-              Daftar
-            </button>
+            <Link href="/admin">
+              <button className="text-sm font-semibold text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/20 px-6 py-2 rounded-full transition-all hover:-translate-y-0.5 cursor-pointer">
+                Admin Dashboard
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -110,12 +109,11 @@ export default function Navbar() {
           ))}
         </div>
         <div className="mt-auto flex flex-col gap-3">
-          <button className="w-full py-3 rounded-xl font-medium text-white bg-white/10 hover:bg-white/20 transition-colors">
-            Masuk
-          </button>
-          <button className="w-full py-3 rounded-xl font-semibold text-primary bg-white hover:bg-gray-100 shadow-xl transition-colors">
-            Daftar Sekarang
-          </button>
+          <Link href="/admin" onClick={() => setIsMobileOpen(false)}>
+            <button className="w-full py-3 rounded-xl font-semibold text-primary bg-white hover:bg-gray-100 shadow-xl transition-colors cursor-pointer">
+              Admin Dashboard
+            </button>
+          </Link>
         </div>
       </div>
     </>

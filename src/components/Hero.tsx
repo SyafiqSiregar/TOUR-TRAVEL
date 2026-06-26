@@ -14,7 +14,17 @@ const HERO_SLIDES = [
   { id: 3, image: "/assets/hero-bromo.png" },
 ];
 
-export default function Hero() {
+const DUMMY_LOCATIONS = [
+  "Aceh", "Sumatra Utara", "Sumatra Barat", "Riau", "Jambi", "Sumatra Selatan", "Bengkulu", "Lampung", "Bangka Belitung", "Kepulauan Riau",
+  "DKI Jakarta", "Jawa Barat", "Jawa Tengah", "DI Yogyakarta", "Jawa Timur", "Banten",
+  "Bali", "Nusa Tenggara Barat", "Nusa Tenggara Timur",
+  "Kalimantan Barat", "Kalimantan Tengah", "Kalimantan Selatan", "Kalimantan Timur", "Kalimantan Utara",
+  "Sulawesi Utara", "Sulawesi Tengah", "Sulawesi Selatan", "Sulawesi Tenggara", "Gorontalo", "Sulawesi Barat",
+  "Maluku", "Maluku Utara", "Papua", "Papua Barat", "Papua Selatan", "Papua Tengah", "Papua Pegunungan",
+  "Bandung", "Surabaya", "Medan", "Makassar", "Semarang", "Palembang", "Batam", "Pekanbaru", "Malang", "Padang", "Denpasar", "Samarinda", "Balikpapan", "Banjarmasin", "Labuan Bajo", "Raja Ampat", "Pulau Seribu", "Belitung"
+];
+
+export default function Hero({ destinations = [] }: { destinations?: any[] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showLocation, setShowLocation] = useState(false);
   const [showDate, setShowDate] = useState(false);
@@ -23,9 +33,14 @@ export default function Hero() {
   const [pax, setPax] = useState("");
 
   const handleSearch = () => {
-    const loc = selectedLocation || "destinasi (belum ditentukan)";
-    const dateStr = selectedDate ? format(selectedDate, "dd MMM yyyy", { locale: id }) : "waktu (belum ditentukan)";
-    const paxStr = pax || "jumlah (belum ditentukan)";
+    if (!selectedLocation || !selectedDate || !pax) {
+      alert("Harap isi terlebih dahulu untuk melanjutkan");
+      return;
+    }
+
+    const loc = selectedLocation;
+    const dateStr = format(selectedDate, "dd MMM yyyy", { locale: id });
+    const paxStr = pax;
     
     const message = `Halo Admin M One Travelindo, saya tertarik untuk merencanakan perjalanan rombongan dengan detail berikut:\n\n📍 *Tujuan*: ${loc}\n📅 *Tanggal*: ${dateStr}\n👥 *Jumlah Peserta*: ${paxStr}\n\nMohon informasi lebih lanjut mengenai ketersediaan paket dan harganya. Terima kasih!`;
     const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
@@ -112,7 +127,7 @@ export default function Hero() {
           {/* LOKASI FIELD */}
           <div ref={locationRef} className="flex-1 relative">
             <div 
-              onClick={() => { setShowLocation(!showLocation); setShowDate(false); }}
+              onClick={() => { setShowLocation(true); setShowDate(false); }}
               className="flex items-center px-4 py-2.5 bg-gray-50 rounded-2xl border border-transparent hover:border-gray-200 transition-colors cursor-pointer h-full"
             >
               <MapPin className="w-4 h-4 text-primary mr-3" />
@@ -120,10 +135,14 @@ export default function Hero() {
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Lokasi</span>
                 <input 
                   type="text" 
-                  readOnly
                   value={selectedLocation}
-                  placeholder="Pilih destinasi" 
-                  className="bg-transparent border-none outline-none text-gray-900 text-sm font-semibold placeholder:text-gray-400 w-full cursor-pointer" 
+                  onChange={(e) => {
+                    setSelectedLocation(e.target.value);
+                    setShowLocation(true);
+                  }}
+                  onFocus={() => { setShowLocation(true); setShowDate(false); }}
+                  placeholder="Ketik atau pilih destinasi" 
+                  className="bg-transparent border-none outline-none text-gray-900 text-sm font-semibold placeholder:text-gray-400 w-full cursor-text" 
                 />
               </div>
             </div>
@@ -134,38 +153,42 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute top-full left-0 mt-4 w-full md:w-[400px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 flex flex-col text-left"
+                  className="absolute top-full left-0 mt-4 w-full md:w-[350px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 flex flex-col text-left max-h-[280px]"
                 >
-                  <div className="p-4 bg-gray-50 border-b border-gray-100 flex justify-between items-center">
-                    <span className="font-semibold text-gray-800">Destinasi Populer</span>
+                  <div className="p-4 bg-gray-50 border-b border-gray-100 flex justify-between items-center z-10 shadow-sm">
+                    <span className="font-semibold text-gray-800">Pilih Destinasi</span>
                     <button onClick={() => setShowLocation(false)} className="text-gray-400 hover:text-gray-600">
                       <X className="w-5 h-5" />
                     </button>
                   </div>
-                  <div className="p-2 grid grid-cols-2 gap-2">
-                    {["Bali", "Raja Ampat", "Lombok", "Labuan Bajo"].map((loc) => (
-                      <button
-                        key={loc}
-                        onClick={() => { setSelectedLocation(loc); setShowLocation(false); }}
-                        className="px-3 py-2 text-sm text-left font-medium text-gray-700 rounded-xl hover:bg-primary/10 hover:text-primary transition-all duration-200 hover:translate-x-1"
-                      >
-                        {loc}
-                      </button>
-                    ))}
-                  </div>
-                  <div className="p-4 bg-gray-50 border-t border-gray-100">
-                    <span className="block text-xs font-semibold text-gray-500 mb-2">PETA EKSPLORASI</span>
-                    <div className="rounded-xl overflow-hidden shadow-inner h-[200px] bg-gray-200">
-                      <iframe 
-                        src={`https://maps.google.com/maps?q=${selectedLocation || 'Indonesia'}&t=&z=5&ie=UTF8&iwloc=&output=embed`}
-                        width="100%" 
-                        height="100%" 
-                        style={{ border: 0 }} 
-                        allowFullScreen 
-                        loading="lazy" 
-                        referrerPolicy="no-referrer-when-downgrade"
-                      />
-                    </div>
+                  <div className="p-2 overflow-y-auto flex-1 custom-scrollbar">
+                    {(() => {
+                      const uniqueLocations = Array.from(new Set([
+                        ...destinations.map(d => d.loc),
+                        ...DUMMY_LOCATIONS
+                      ])).filter(Boolean).sort();
+                      
+                      const filtered = uniqueLocations.filter(loc => loc.toLowerCase().includes(selectedLocation.toLowerCase()));
+                      
+                      if (filtered.length === 0) {
+                         return <div className="p-6 text-center text-sm text-gray-500">Destinasi tidak ditemukan</div>;
+                      }
+
+                      return filtered.map((loc) => (
+                        <button
+                          key={loc}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setSelectedLocation(loc); 
+                            setShowLocation(false); 
+                          }}
+                          className="w-full px-4 py-3 text-sm text-left font-medium text-gray-700 rounded-xl hover:bg-primary/10 hover:text-primary transition-all duration-200 flex items-center"
+                        >
+                          <MapPin className="w-4 h-4 mr-3 text-gray-400" />
+                          {loc}
+                        </button>
+                      ));
+                    })()}
                   </div>
                 </motion.div>
               )}
@@ -247,7 +270,11 @@ export default function Hero() {
 
           <button 
             onClick={handleSearch}
-            className="bg-primary hover:bg-primary-hover text-white rounded-2xl px-6 py-3 flex items-center justify-center text-sm font-bold transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95 cursor-pointer"
+            className={`rounded-2xl px-6 py-3 flex items-center justify-center text-sm font-bold transition-all duration-300 shadow-lg ${
+              selectedLocation && selectedDate && pax
+                ? "bg-primary hover:bg-primary-hover text-white shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-95 cursor-pointer"
+                : "bg-gray-300 text-gray-500 shadow-none cursor-not-allowed"
+            }`}
           >
             <Search className="w-4 h-4 mr-2" />
             Cari

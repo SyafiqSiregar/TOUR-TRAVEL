@@ -5,68 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, X, ZoomIn } from "lucide-react";
 import Image from "next/image";
 
-// Data Dummy Galeri
-const GALLERY_ITEMS = [
-  {
-    id: 1,
-    img: "/assets/hero-bromo.png",
-    title: "Sunrise Bromo Penanjakan",
-    category: "Overland",
-    location: "Jawa Timur",
-    aspectRatio: "aspect-[4/3]",
-  },
-  {
-    id: 2,
-    img: "/assets/hero-bali.png",
-    title: "Dinner Romantis Jimbaran",
-    category: "Honeymoon",
-    location: "Bali",
-    aspectRatio: "aspect-[3/4]", // Portrait
-  },
-  {
-    id: 3,
-    img: "/assets/hero-raja-ampat.png",
-    title: "Eksplorasi Wayag",
-    category: "Premium Trip",
-    location: "Raja Ampat",
-    aspectRatio: "aspect-[4/5]", // Portrait
-  },
-  {
-    id: 4,
-    img: "/assets/dest-lombok.png",
-    title: "Island Hopping Gili",
-    category: "Study Tour",
-    location: "Lombok",
-    aspectRatio: "aspect-square", // Square
-  },
-  {
-    id: 5,
-    img: "/assets/dest-komodo.png",
-    title: "Trekking Pulau Padar",
-    category: "Adventure",
-    location: "Nusa Tenggara Timur",
-    aspectRatio: "aspect-[4/3]",
-  },
-  {
-    id: 6,
-    img: "/assets/hero-bromo.png", // Reusing for masonry effect
-    title: "Jeep Lava Tour Bromo",
-    category: "Overland",
-    location: "Jawa Timur",
-    aspectRatio: "aspect-square",
-  },
-  {
-    id: 7,
-    img: "/assets/hero-bali.png", // Reusing
-    title: "Tari Kecak Uluwatu",
-    category: "Study Tour",
-    location: "Bali",
-    aspectRatio: "aspect-[3/4]",
-  },
-];
-
-export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState<typeof GALLERY_ITEMS[0] | null>(null);
+export default function Gallery({ items = [] }: { items?: any[] }) {
+  const displayItems = items.length > 0 ? items : [];
+  const [selectedImage, setSelectedImage] = useState<any | null>(null);
 
   // Disable scroll when lightbox is open
   if (typeof window !== "undefined") {
@@ -113,7 +54,7 @@ export default function Gallery() {
 
         {/* Lightweight CSS Columns Masonry */}
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6">
-          {GALLERY_ITEMS.map((item, i) => (
+          {displayItems.map((item, i) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}

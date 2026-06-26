@@ -4,60 +4,14 @@ import { useState, useEffect } from "react";
 import { MapPin, Plus, Star, ArrowRight, ArrowLeft, ArrowUp, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const DESTINATIONS = [
-  { 
-    id: 1, 
-    name: "Bali Romantic 4H3M", 
-    loc: "Bali", 
-    dist: "1,200 Km", 
-    rating: 4.9, 
-    img: "/assets/hero-bali.png",
-    details: "Rasakan momen romantis di Bali dengan fasilitas privat villa, dinner romantis di pinggir pantai Jimbaran, dan tur eksklusif ke Nusa Penida. Paket ini dirancang khusus untuk pasangan yang mencari ketenangan dan privasi."
-  },
-  { 
-    id: 2, 
-    name: "Raja Ampat Explorer", 
-    loc: "Papua", 
-    dist: "3,100 Km", 
-    rating: 5.0, 
-    img: "/assets/hero-raja-ampat.png",
-    details: "Eksplorasi kepulauan Raja Ampat yang magis. Snorkeling bersama pari manta, mengunjungi Wayag, dan menginap di resort terapung dengan pemandangan laut sebening kristal."
-  },
-  { 
-    id: 3, 
-    name: "Bromo Sunrise Trek", 
-    loc: "Jawa Timur", 
-    dist: "800 Km", 
-    rating: 4.8, 
-    img: "/assets/hero-bromo.png",
-    details: "Saksikan salah satu matahari terbit terbaik di dunia dari Penanjakan 1. Trip menggunakan Jeep 4WD mengelilingi lautan pasir dan mendaki kawah Bromo yang legendaris."
-  },
-  { 
-    id: 4, 
-    name: "Lombok Island Hopping", 
-    loc: "NTB", 
-    dist: "1,350 Km", 
-    rating: 4.7, 
-    img: "/assets/dest-lombok.png",
-    details: "Jelajahi keindahan tiga gili (Trawangan, Meno, Air) dan nikmati budaya lokal suku Sasak. Termasuk fasilitas penjemputan bandara dan penginapan tepi pantai."
-  },
-  { 
-    id: 5, 
-    name: "Komodo Sailing 3H2M", 
-    loc: "NTT", 
-    dist: "1,800 Km", 
-    rating: 4.9, 
-    img: "/assets/dest-komodo.png",
-    details: "Berlayar mengelilingi Taman Nasional Komodo dengan kapal Phinisi premium. Kunjungi Pulau Padar, Pink Beach, dan berinteraksi langsung dengan Komodo di habitat aslinya."
-  },
-];
-
-export default function DestinationCarousel() {
+export default function DestinationCarousel({ destinations = [] }: { destinations?: any[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedDest, setSelectedDest] = useState<number | null>(null);
+  const [selectedDest, setSelectedDest] = useState<string | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [windowWidth, setWindowWidth] = useState(1200);
   
+  const displayDestinations = destinations.length > 0 ? destinations : [];
+
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -67,17 +21,24 @@ export default function DestinationCarousel() {
 
   // Autoplay logic
   useEffect(() => {
-    if (isHovered || selectedDest !== null) return;
+    if (isHovered || selectedDest !== null || displayDestinations.length === 0) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % DESTINATIONS.length);
+      setCurrentIndex((prev) => (prev + 1) % displayDestinations.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [isHovered, selectedDest]);
+  }, [isHovered, selectedDest, displayDestinations.length]);
 
-  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % DESTINATIONS.length);
-  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + DESTINATIONS.length) % DESTINATIONS.length);
+  const nextSlide = () => {
+    if (displayDestinations.length === 0) return;
+    setCurrentIndex((prev) => (prev + 1) % displayDestinations.length);
+  };
+  
+  const prevSlide = () => {
+    if (displayDestinations.length === 0) return;
+    setCurrentIndex((prev) => (prev - 1 + displayDestinations.length) % displayDestinations.length);
+  };
 
-  const activeDestination = DESTINATIONS.find(d => d.id === selectedDest);
+  const activeDestination = displayDestinations.find(d => d.id === selectedDest);
 
   // Responsive logic
   let xOffset = 280;
@@ -90,9 +51,10 @@ export default function DestinationCarousel() {
   }
 
   const getPosition = (index: number) => {
+    if (displayDestinations.length === 0) return "hidden";
     if (index === currentIndex) return "active";
-    if (index === (currentIndex - 1 + DESTINATIONS.length) % DESTINATIONS.length) return "left";
-    if (index === (currentIndex + 1) % DESTINATIONS.length) return "right";
+    if (index === (currentIndex - 1 + displayDestinations.length) % displayDestinations.length) return "left";
+    if (index === (currentIndex + 1) % displayDestinations.length) return "right";
     return "hidden";
   };
 
@@ -182,7 +144,7 @@ export default function DestinationCarousel() {
 
         {/* Carousel Cards */}
         <div className="relative w-full max-w-[380px] h-[480px] flex justify-center items-center" style={{ transformStyle: "preserve-3d" }}>
-          {DESTINATIONS.map((dest, index) => {
+          {displayDestinations.map((dest, index) => {
             const position = getPosition(index);
             const isActive = position === "active";
             const isSelected = selectedDest === dest.id;
@@ -304,7 +266,7 @@ export default function DestinationCarousel() {
                   </div>
                   <div className="w-full md:w-64 bg-gray-50 rounded-2xl p-6 border border-gray-100 shrink-0 flex flex-col justify-center text-center">
                     <div className="text-sm text-gray-500 mb-1">Harga mulai dari</div>
-                    <div className="text-3xl font-heading font-bold text-primary mb-4">Rp 4.5<span className="text-lg">Jt</span></div>
+                    <div className="text-3xl font-heading font-bold text-primary mb-4">{activeDestination.price}</div>
                     <button className="w-full bg-primary hover:bg-primary-hover text-white font-semibold py-3 rounded-xl transition-colors shadow-lg shadow-primary/20 hover:-translate-y-0.5 cursor-pointer">
                       Booking Sekarang
                     </button>

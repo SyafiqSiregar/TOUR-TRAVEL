@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String   // Hashed password
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Destination {
+  id        String   @id @default(uuid())
+  name      String
+  loc       String
+  dist      String
+  rating    Float
+  img       String
+  details   String
+  price     String   // E.g., "Rp 4.5Jt" or store as Int basePrice
+  isPromo   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Program {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  icon        String   // String name of lucide-react icon
+  color       String   // Tailwind class e.g., "bg-primary"
+  href        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model GalleryItem {
+  id          String   @id @default(uuid())
+  img         String
+  title       String
+  category    String
+  location    String
+  aspectRatio String   // e.g., "aspect-[3/4]"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

@@ -1,3 +1,4 @@
+import prisma from "@/lib/prisma";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SpecialPrograms from "@/components/SpecialPrograms";
@@ -13,13 +14,27 @@ import Testimonial from "@/components/Testimonial";
 import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export const revalidate = 0; // Fetch fresh data on every request
+
+export default async function Home() {
+  const destinations = await prisma.destination.findMany({
+    orderBy: { createdAt: "desc" }
+  });
+
+  const programs = await prisma.program.findMany({
+    orderBy: { createdAt: "desc" }
+  });
+
+  const galleryItems = await prisma.galleryItem.findMany({
+    orderBy: { createdAt: "desc" }
+  });
+
   return (
     <main className="min-h-screen bg-bg selection:bg-primary selection:text-white">
       <Navbar />
-      <Hero />
-      <SpecialPrograms />
-      <DestinationCarousel />
+      <Hero destinations={destinations} />
+      <SpecialPrograms programs={programs} />
+      <DestinationCarousel destinations={destinations} />
       {/* Travel Path Animated Background Zone */}
       <div className="relative overflow-hidden bg-white">
         <TravelPathBackground />
@@ -30,7 +45,7 @@ export default function Home() {
       <Mockup />
       <FAQ />
       <SocialProof />
-      <Gallery />
+      <Gallery items={galleryItems} />
       <Testimonial />
       <Footer />
     </main>
